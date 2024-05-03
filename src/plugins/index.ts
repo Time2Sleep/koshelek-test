@@ -3,7 +3,7 @@ import {vuetify} from "@/plugins/vuetify";
 import router from "@/plugins/router";
 import pinia from "@/plugins/pinia";
 
-export const definePlugins = (app): App => {
+export const definePlugins = (app: App): App => {
     app.use(vuetify);
     app.use(router);
     app.use(pinia);

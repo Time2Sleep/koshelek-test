@@ -52,13 +52,13 @@ export const useDataStore = defineStore('settings', {
 
 
                 this.oldPrice = this.actualPrice;
-                let {a: asks,b: bids} = JSON.parse(data);
+                let {a: asks,b: bids} = JSON.parse(data) as {a: string[][], b: string[][]};
 
                 asks = asks.filter(([_, quantity]) => Number(quantity) > 0);
                 bids = bids.filter(([_, quantity]) => Number(quantity) > 0);
 
-                this.bids = bids.sort((a,b) => a[0] - b[0]);
-                this.asks = asks.sort((a,b) => a[0] - b[0]);
+                this.bids = bids.sort((a,b) => +a[0] - +b[0]);
+                this.asks = asks.sort((a,b) => +a[0] - +b[0]);
                 this.lastUpdateId = data.u;
             });
         },

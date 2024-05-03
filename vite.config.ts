@@ -12,17 +12,6 @@ export default defineConfig({
   server: {
     port: 3000
   },
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'home' : ['./src/pages/HomeView'],
-          'settings' : ['./src/pages/SettingsView'],
-          'order-book' : ['./src/pages/OrderBookView'],
-        }
-      }
-    }
-  },
   css: {
     preprocessorOptions: {
       scss: {

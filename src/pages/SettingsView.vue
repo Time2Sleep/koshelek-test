@@ -1,6 +1,4 @@
 <script setup lang="ts">
-
-import {onMounted} from "vue";
 import CSelect from "@/components/ui/CSelect.vue";
 import {useDataStore} from "@/store/dataStore";
 import {storeToRefs} from "pinia";
@@ -12,7 +10,6 @@ const settingsStore = useDataStore();
 const historyStore = useHistoryStore();
 
 const { currentSymbol } = storeToRefs(settingsStore);
-const { fetchStockBook } = settingsStore;
 
 const { history } = storeToRefs(historyStore);
 const { saveHistory } = historyStore;

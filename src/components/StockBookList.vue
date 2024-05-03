@@ -16,7 +16,7 @@ const props = defineProps<Props>();
 
     <td class=" stock-book-list__cell">{{ quantity }}</td>
 
-    <td class="stock-book-list__sum stock-book-list__cell">{{ (price*quantity).toFixed(5) }}</td>
+    <td class="stock-book-list__sum stock-book-list__cell">{{ (+price * +quantity).toFixed(5) }}</td>
   </tr>
 
 </template>
